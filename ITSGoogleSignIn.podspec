@@ -5,9 +5,9 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 The Google Sign-In SDK allows users to sign in with their Google account from third-party apps.
                        DESC
-  s.homepage         = 'https://developers.google.com/identity/sign-in/ios/'
+  s.homepage         = 'https://github.com/Mobile-Innowise-Group'
   s.license          = { :type => 'Apache', :file => 'LICENSE' }
-  s.authors          = 'Google LLC'
+  s.authors          = 'Innowise Group'
   s.source           = {
     :git => 'https://github.com/Mobile-Innowise-Group/ITSGoogleSignIn.git',
     :tag => '0.0.1'
