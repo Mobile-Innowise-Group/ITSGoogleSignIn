@@ -18,7 +18,7 @@
 
 #ifdef SWIFT_PACKAGE
 @import AppAuth;
-@import GTMAppAuth;
+@import ITSGTMAppAuth;
 #else
 #import <AppAuth/AppAuth.h>
 #import <ITSGTMAppAuth/GTMAppAuth.h>
