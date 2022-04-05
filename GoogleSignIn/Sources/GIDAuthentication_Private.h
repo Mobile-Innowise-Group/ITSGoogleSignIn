@@ -21,7 +21,7 @@
 @import GTMAppAuth;
 #else
 #import <AppAuth/AppAuth.h>
-#import <GTMAppAuth/GTMAppAuth.h>
+#import <ITSGTMAppAuth/GTMAppAuth.h>
 #endif
 
 NS_ASSUME_NONNULL_BEGIN
