@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ITSGoogleSignIn'
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   s.summary          = 'Enables iOS apps to sign in with Google.'
   s.description      = <<-DESC
 The Google Sign-In SDK allows users to sign in with their Google account from third-party apps.
@@ -10,7 +10,7 @@ The Google Sign-In SDK allows users to sign in with their Google account from th
   s.authors          = 'Innowise Group'
   s.source           = {
     :git => 'https://github.com/Mobile-Innowise-Group/ITSGoogleSignIn.git',
-    :tag => '0.0.2'
+    :tag => '0.0.3'
   }
   ios_deployment_target = '9.0'
   osx_deployment_target = '10.15'
