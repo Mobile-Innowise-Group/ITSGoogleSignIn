@@ -37,7 +37,7 @@
 
 #ifdef SWIFT_PACKAGE
 @import AppAuth;
-@import GTMAppAuth;
+@import ITSGTMAppAuth;
 @import GTMSessionFetcherCore;
 #else
 #import <AppAuth/OIDAuthState.h>
@@ -52,8 +52,8 @@
 #import <AppAuth/OIDTokenRequest.h>
 #import <AppAuth/OIDTokenResponse.h>
 #import <AppAuth/OIDURLQueryComponent.h>
-#import <GTMAppAuth/GTMAppAuthFetcherAuthorization+Keychain.h>
-#import <GTMAppAuth/GTMAppAuthFetcherAuthorization.h>
+#import <ITSGTMAppAuth/GTMAppAuthFetcherAuthorization+Keychain.h>
+#import <ITSGTMAppAuth/GTMAppAuthFetcherAuthorization.h>
 #import <GTMSessionFetcher/GTMSessionFetcher.h>
 
 #if TARGET_OS_IOS || TARGET_OS_MACCATALYST
