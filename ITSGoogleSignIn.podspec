@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ITSGoogleSignIn'
-  s.version          = '0.0.5'
+  s.version          = '0.0.6'
   s.summary          = 'Enables iOS apps to sign in with Google.'
   s.description      = <<-DESC
                        It is cloned GoogleSighIn with some changes.
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.authors          = 'Google, Innowise Group'
   s.source           = {
     :git => 'https://github.com/Mobile-Innowise-Group/ITSGoogleSignIn.git',
-    :tag => '0.0.5'
+    :tag => '0.0.6'
   }
   ios_deployment_target = '9.0'
   osx_deployment_target = '10.15'
