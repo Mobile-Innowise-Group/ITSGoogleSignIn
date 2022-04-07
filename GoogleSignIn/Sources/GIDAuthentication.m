@@ -50,12 +50,15 @@ static NSString *const kAuthStateKey = @"authState";
 static NSString *const kEMMSupportParameterName = @"emm_support";
 static NSString *const kEMMOSVersionParameterName = @"device_os";
 static NSString *const kEMMPasscodeInfoParameterName = @"emm_passcode_info";
+static NSString *const kPromptParametrName = @"prompt";
 
 // Old UIDevice system name for iOS.
 static NSString *const kOldIOSSystemName = @"iPhone OS";
 
 // New UIDevice system name for iOS.
 static NSString *const kNewIOSSystemName = @"iOS";
+
+static NSString *const kPromptName = @"select_account";
 
 #if TARGET_OS_IOS
 
@@ -315,6 +318,7 @@ static NSString *const kNewIOSSystemName = @"iOS";
     allParameters[kEMMPasscodeInfoParameterName] = [GIDMDMPasscodeState passcodeState].info;
   }
   allParameters[kSDKVersionLoggingParameter] = GIDVersion();
+  allParameters[kPromptNameParameter] = kPromptName;
   return allParameters;
 }
 

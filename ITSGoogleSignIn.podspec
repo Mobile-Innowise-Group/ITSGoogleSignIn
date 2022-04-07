@@ -1,16 +1,17 @@
 Pod::Spec.new do |s|
   s.name             = 'ITSGoogleSignIn'
-  s.version          = '0.0.4'
+  s.version          = '0.0.5'
   s.summary          = 'Enables iOS apps to sign in with Google.'
   s.description      = <<-DESC
-The Google Sign-In SDK allows users to sign in with their Google account from third-party apps.
+                       It is cloned GoogleSighIn with some changes.
+                       The Google Sign-In SDK allows users to sign in with their Google account from third-party apps.
                        DESC
   s.homepage         = 'https://github.com/Mobile-Innowise-Group'
   s.license          = { :type => 'Apache', :file => 'LICENSE' }
-  s.authors          = 'Innowise Group'
+  s.authors          = 'Google, Innowise Group'
   s.source           = {
     :git => 'https://github.com/Mobile-Innowise-Group/ITSGoogleSignIn.git',
-    :tag => '0.0.4'
+    :tag => '0.0.5'
   }
   ios_deployment_target = '9.0'
   osx_deployment_target = '10.15'
@@ -33,7 +34,7 @@ The Google Sign-In SDK allows users to sign in with their Google account from th
   s.ios.framework = 'UIKit'
   s.osx.framework = 'AppKit'
   s.dependency 'AppAuth', '~> 1.5'
-  s.dependency 'ITSGTMAppAuth', '~> 0.0.4'
+  s.dependency 'GTMAppAuth', '~> 1.0.0'
   s.dependency 'GTMSessionFetcher/Core', '~> 1.1'
   s.resource_bundle = {
     'GoogleSignIn' => ['GoogleSignIn/Sources/{Resources,Strings}/*']
