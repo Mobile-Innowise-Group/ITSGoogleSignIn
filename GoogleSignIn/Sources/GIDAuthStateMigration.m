@@ -18,11 +18,11 @@
 
 #ifdef SWIFT_PACKAGE
 @import AppAuth;
-@import ITSGTMAppAuth;
+@import GTMAppAuth;
 #else
 #import <AppAuth/AppAuth.h>
-#import <ITSGTMAppAuth/GTMAppAuth.h>
-#import <ITSGTMAppAuth/GTMKeychain.h>
+#import <GTMAppAuth/GTMAppAuth.h>
+#import <GTMAppAuth/GTMKeychain.h>
 #endif
 
 NS_ASSUME_NONNULL_BEGIN
