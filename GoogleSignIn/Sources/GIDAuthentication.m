@@ -318,7 +318,7 @@ static NSString *const kPromptName = @"select_account";
     allParameters[kEMMPasscodeInfoParameterName] = [GIDMDMPasscodeState passcodeState].info;
   }
   allParameters[kSDKVersionLoggingParameter] = GIDVersion();
-  allParameters[kPromptNameParameter] = kPromptName;
+  allParameters[kPromptParametrName] = kPromptName;
   return allParameters;
 }
 
