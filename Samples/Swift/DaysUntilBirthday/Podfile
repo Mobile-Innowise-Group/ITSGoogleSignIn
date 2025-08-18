@@ -1,6 +1,13 @@
-platform :ios, '9.0'
+pod 'GoogleSignIn', :path => '../../../', :testspecs => ['unit']
+pod 'GoogleSignInSwiftSupport', :path => '../../../', :testspecs => ['unit']
+project 'DaysUntilBirthdayForPod.xcodeproj'
 
-target 'DaysUntilBirthdayForPod' do
-  pod 'GoogleSignIn', :path => '../../../', :testspecs => ['unit']
-  project 'DaysUntilBirthdayForPod.xcodeproj'
+use_frameworks! :linkage => :static
+
+target 'DaysUntilBirthdayForPod (iOS)' do
+  platform :ios, '14.0'
+end
+
+target 'DaysUntilBirthdayForPod (macOS)' do
+  platform :osx, '11.0'
 end

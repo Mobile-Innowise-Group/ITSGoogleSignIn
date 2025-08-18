@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 // Copyright 2021 Google LLC
@@ -17,34 +17,46 @@
 
 import PackageDescription
 
-let googleSignInVersion = "6.2.0"
+let googleSignInVersion = "9.0.0"
 
 let package = Package(
   name: "GoogleSignIn",
   defaultLocalization: "en",
   platforms: [
     .macOS(.v10_15),
-    .iOS(.v9)
+    .iOS(.v12)
   ],
   products: [
     .library(
       name: "GoogleSignIn",
-      targets: ["GoogleSignIn"]
+      targets: [
+        "GoogleSignIn",
+      ]
+    ),
+    .library(
+      name: "GoogleSignInSwift",
+      targets: [
+        "GoogleSignInSwift",
+      ]
     ),
   ],
   dependencies: [
     .package(
       name: "AppAuth",
       url: "https://github.com/openid/AppAuth-iOS.git",
-      "1.5.0" ..< "2.0.0"),
+      from: "2.0.0"),
+    .package(
+      name: "AppCheck",
+      url: "https://github.com/google/app-check.git",
+      from: "11.0.0"),
     .package(
       name: "GTMAppAuth",
       url: "https://github.com/google/GTMAppAuth.git",
-      "1.2.0" ..< "2.0.0"),
+      from: "5.0.0"),
     .package(
       name: "GTMSessionFetcher",
       url: "https://github.com/google/gtm-session-fetcher.git",
-      "1.5.0" ..< "2.0.0"),
+      from: "3.3.0"),
     .package(
       name: "OCMock",
       url: "https://github.com/firebase/ocmock.git",
@@ -52,13 +64,15 @@ let package = Package(
     .package(
       name: "GoogleUtilities",
       url: "https://github.com/google/GoogleUtilities.git",
-      "7.3.0" ..< "8.0.0"),
+      from: "8.0.0"),
   ],
   targets: [
     .target(
       name: "GoogleSignIn",
       dependencies: [
         .product(name: "AppAuth", package: "AppAuth"),
+        .product(name: "AppAuthCore", package: "AppAuth"),
+        .product(name: "AppCheckCore", package: "AppCheck"),
         .product(name: "GTMAppAuth", package: "GTMAppAuth"),
         .product(name: "GTMSessionFetcherCore", package: "GTMSessionFetcher"),
       ],
@@ -82,12 +96,23 @@ let package = Package(
         .linkedFramework("UIKit", .when(platforms: [.iOS])),
       ]
     ),
+    .target(
+      name: "GoogleSignInSwift",
+      dependencies: [
+        "GoogleSignIn",
+      ],
+      path: "GoogleSignInSwift/Sources",
+      resources: [
+        .copy("Resources/PrivacyInfo.xcprivacy")
+      ]
+    ),
     .testTarget(
       name: "GoogleSignIn-UnitTests",
       dependencies: [
         "GoogleSignIn",
         "OCMock",
         .product(name: "AppAuth", package: "AppAuth"),
+        .product(name: "AppCheckCore", package: "AppCheck"),
         .product(name: "GTMAppAuth", package: "GTMAppAuth"),
         .product(name: "GTMSessionFetcherCore", package: "GTMSessionFetcher"),
         .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
@@ -99,5 +124,10 @@ let package = Package(
         .define("GID_SDK_VERSION", to: googleSignInVersion),
       ]
     ),
+    .testTarget(
+      name: "GoogleSignInSwift-UnitTests",
+      dependencies: ["GoogleSignInSwift"],
+      path: "GoogleSignInSwift/Tests/Unit"
+    )
   ]
 )
