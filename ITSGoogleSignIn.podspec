@@ -34,8 +34,8 @@ Pod::Spec.new do |s|
   s.ios.framework = 'UIKit'
   s.osx.framework = 'AppKit'
   s.dependency 'AppAuth', '~> 1.5'
-  s.dependency 'GTMAppAuth', '~> 1.0.0'
-  s.dependency 'GTMSessionFetcher/Core', '~> 1.1'
+  s.dependency 'ITSGTMAppAuth', '~> 0.0.4'
+  s.dependency 'GTMSessionFetcher/Core', '~> 3.4.0'
   s.resource_bundle = {
     'GoogleSignIn' => ['GoogleSignIn/Sources/{Resources,Strings}/*']
   }
