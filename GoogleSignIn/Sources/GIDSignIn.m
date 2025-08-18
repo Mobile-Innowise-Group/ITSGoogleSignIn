@@ -1,4 +1,8 @@
 // Copyright 2021 Google LLC
+// 
+// DOMAIN SELECTION FIX: This file has been modified to enforce domain selection
+// by validating the user's hosted domain against the configured hostedDomain
+// during authentication. Users with mismatched domains will be rejected.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -992,6 +996,17 @@ static NSString *const kConfigOpenIDRealmKey = @"GIDOpenIDRealm";
     // If the profile data are present in the ID token, use them.
     if (idToken) {
       handlerAuthFlow.profileData = [self profileDataWithIDToken:idToken];
+      
+      // DOMAIN SELECTION FIX: Validate user's domain against configured hostedDomain
+      if (self->_currentOptions.configuration.hostedDomain) {
+        NSString *userHostedDomain = idToken.claims[@"hd"];
+        if (!userHostedDomain || ![userHostedDomain isEqualToString:self->_currentOptions.configuration.hostedDomain]) {
+          // User's domain doesn't match configured domain - reject authentication
+          handlerAuthFlow.error = [self errorWithString:@"Domain mismatch: User must sign in with the specified company domain"
+                                                   code:kGIDSignInErrorCodeDomainMismatch];
+          return;
+        }
+      }
     }
 
     // If we can't retrieve profile data from the ID token, make a userInfo request to fetch them.
