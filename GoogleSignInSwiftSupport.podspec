@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
-  s.name = 'GoogleSignInSwiftSupport'
-  s.version = '9.0.0'
+  s.name = 'ITSGoogleSignInSwiftSupport'
+  s.version = '0.1.0'
   s.swift_version = '5.0'
-  s.summary = 'Adds Swift-focused support for Google Sign-In.'
-  s.description = 'Additional Swift support for the Google Sign-In SDK.'
-  s.homepage = 'https://developers.google.com/identity/sign-in/ios/'
+  s.summary = 'Adds Swift-focused support for ITSGoogleSignIn (with domain selection fix).'
+  s.description = 'Additional Swift support for the ITSGoogleSignIn SDK with domain selection fix.'
+  s.homepage = 'https://github.com/Mobile-Innowise-Group/ITSGoogleSignIn'
   s.license = { :type => 'Apache', :file => 'LICENSE' }
-  s.authors = 'Google LLC'
+  s.authors = 'Google LLC, Innowise Group'
   s.source = {
-    :git => 'https://github.com/google/GoogleSignIn-iOS.git',
+    :git => 'https://github.com/Mobile-Innowise-Group/ITSGoogleSignIn.git',
     :tag => s.version.to_s
   }
   ios_deployment_target = '13.0'
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
     'CoreGraphics',
     'SwiftUI',
   ]
-  s.dependency 'GoogleSignIn', '~> 9.0'
+  s.dependency 'ITSGoogleSignIn', '~> 0.1.0'
   s.resource_bundles = {
     'GoogleSignInSwiftSupport_Privacy' => 'GoogleSignInSwift/Sources/Resources/PrivacyInfo.xcprivacy'
   }

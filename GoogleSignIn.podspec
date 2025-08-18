@@ -1,16 +1,18 @@
 Pod::Spec.new do |s|
-  s.name             = 'GoogleSignIn'
-  s.version          = '9.0.0'
-  s.summary          = 'Enables iOS apps to sign in with Google.'
+  s.name             = 'ITSGoogleSignIn'
+  s.version          = '0.1.0'
+  s.summary          = 'Enables iOS apps to sign in with Google (with domain selection fix).'
   s.description      = <<-DESC
 The Google Sign-In SDK allows users to sign in with their Google account from third-party apps.
+This version includes a fix for domain selection issues, ensuring users can only sign in with
+accounts from the specified company domain.
                        DESC
-  s.homepage         = 'https://developers.google.com/identity/sign-in/ios/'
+  s.homepage         = 'https://github.com/Mobile-Innowise-Group'
   s.license          = { :type => 'Apache', :file => 'LICENSE' }
-  s.authors          = 'Google LLC'
+  s.authors          = 'Google, Innowise Group'
   s.source           = {
-    :git => 'https://github.com/google/GoogleSignIn-iOS.git',
-    :tag => s.version.to_s
+    :git => 'https://github.com/Mobile-Innowise-Group/ITSGoogleSignIn.git',
+    :tag => '0.1.0'
   }
   s.swift_version = '4.0'
   ios_deployment_target = '12.0'
