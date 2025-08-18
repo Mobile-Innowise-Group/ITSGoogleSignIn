@@ -13,17 +13,10 @@
 // limitations under the License.
 
 #import "GoogleSignIn/Sources/GIDAuthStateMigration.h"
-
 #import "GoogleSignIn/Sources/GIDSignInCallbackSchemes.h"
 
-#ifdef SWIFT_PACKAGE
 @import AppAuth;
 @import GTMAppAuth;
-#else
-#import <AppAuth/AppAuth.h>
-#import <GTMAppAuth/GTMAppAuth.h>
-#import <GTMAppAuth/GTMKeychain.h>
-#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
