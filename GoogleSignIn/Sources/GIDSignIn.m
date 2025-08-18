@@ -101,6 +101,8 @@ static NSString *const kEMMVersion = @"1";
 // The error code for Google Identity.
 NSErrorDomain const kGIDSignInErrorDomain = @"com.google.GIDSignIn";
 
+
+
 // Keychain constants for saving state in the authentication flow.
 static NSString *const kGTMAppAuthKeychainName = @"auth";
 
@@ -1003,7 +1005,7 @@ static NSString *const kConfigOpenIDRealmKey = @"GIDOpenIDRealm";
         if (!userHostedDomain || ![userHostedDomain isEqualToString:self->_currentOptions.configuration.hostedDomain]) {
           // User's domain doesn't match configured domain - reject authentication
           handlerAuthFlow.error = [self errorWithString:@"Domain mismatch: User must sign in with the specified company domain"
-                                                   code:kGIDSignInErrorCodeDomainMismatch];
+                                                   code:kGIDSignInErrorCodeUnknown];
           return;
         }
       }
