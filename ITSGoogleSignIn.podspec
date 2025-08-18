@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
     :git => 'https://github.com/Mobile-Innowise-Group/ITSGoogleSignIn.git',
     :tag => '0.0.9'
   }
-  ios_deployment_target = '9.0'
+  ios_deployment_target = '12.0'
   osx_deployment_target = '10.15'
   s.ios.deployment_target = ios_deployment_target
   s.osx.deployment_target = osx_deployment_target
@@ -33,8 +33,8 @@ Pod::Spec.new do |s|
   ]
   s.ios.framework = 'UIKit'
   s.osx.framework = 'AppKit'
-  s.dependency 'AppAuth', '~> 1.5'
-  s.dependency 'ITSGTMAppAuth', '~> 0.0.9'
+  s.dependency 'AppAuth', '~> 2.0'
+  s.dependency 'GTMAppAuth', '~> 5.0.0'
   s.dependency 'GTMSessionFetcher/Core', '~> 3.4.0'
   s.resource_bundle = {
     'GoogleSignIn' => ['GoogleSignIn/Sources/{Resources,Strings}/*']
@@ -44,4 +44,5 @@ Pod::Spec.new do |s|
     'HEADER_SEARCH_PATHS' => '"${PODS_TARGET_SRCROOT}"',
     'DEFINES_MODULE' => 'YES'
   }
+  s.swift_versions = ['5.0']
 end

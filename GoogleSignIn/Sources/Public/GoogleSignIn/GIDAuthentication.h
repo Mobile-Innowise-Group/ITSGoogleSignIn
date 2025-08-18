@@ -21,7 +21,7 @@
 #ifdef SWIFT_PACKAGE
 @import GTMAppAuth;
 #else
-#import <GTMAppAuth/GTMAppAuthFetcherAuthorization.h>
+@import GTMAppAuth;
 #endif
 
 @class GIDAuthentication;
