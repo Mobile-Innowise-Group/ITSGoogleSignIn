@@ -1005,7 +1005,7 @@ static NSString *const kConfigOpenIDRealmKey = @"GIDOpenIDRealm";
         if (!userHostedDomain || ![userHostedDomain isEqualToString:self->_currentOptions.configuration.hostedDomain]) {
           // User's domain doesn't match configured domain - reject authentication
           handlerAuthFlow.error = [self errorWithString:@"Domain mismatch: User must sign in with the specified company domain"
-                                                   code:kGIDSignInErrorCodeUnknown];
+                                                   code:kGIDSignInErrorCodeDomainMismatch];
           return;
         }
       }

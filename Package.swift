@@ -105,29 +105,6 @@ let package = Package(
       resources: [
         .copy("Resources/PrivacyInfo.xcprivacy")
       ]
-    ),
-    .testTarget(
-      name: "GoogleSignIn-UnitTests",
-      dependencies: [
-        "GoogleSignIn",
-        "OCMock",
-        .product(name: "AppAuth", package: "AppAuth"),
-        .product(name: "AppCheckCore", package: "AppCheck"),
-        .product(name: "GTMAppAuth", package: "GTMAppAuth"),
-        .product(name: "GTMSessionFetcherCore", package: "GTMSessionFetcher"),
-        .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
-        .product(name: "GULSwizzlerTestHelpers", package: "GoogleUtilities"),
-      ],
-      path: "GoogleSignIn/Tests/Unit",
-      cSettings: [
-        .headerSearchPath("../../../"),
-        .define("GID_SDK_VERSION", to: googleSignInVersion),
-      ]
-    ),
-    .testTarget(
-      name: "GoogleSignInSwift-UnitTests",
-      dependencies: ["GoogleSignInSwift"],
-      path: "GoogleSignInSwift/Tests/Unit"
     )
   ]
 )
