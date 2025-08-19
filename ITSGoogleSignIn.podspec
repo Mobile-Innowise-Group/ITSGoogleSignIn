@@ -38,7 +38,7 @@ accounts from the specified company domain.
   s.dependency 'AppCheckCore', '~> 11.0'
   s.dependency 'AppAuth', '~> 2.0'
   s.dependency 'GTMAppAuth', '~> 5.0'
-  s.dependency 'GTMSessionFetcher/Core', '~> 3.3'
+  s.dependency 'GTMSessionFetcher/Core', '~> 3.4'
   s.resource_bundle = {
     'GoogleSignIn' => ['GoogleSignIn/Sources/{Resources,Strings}/*']
   }
